@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 轻松发现好游戏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #fdefe1 0%, #fbe9d2 45%, #f5dcc7 100%);
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+      padding: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .card {
+      max-width: 880px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 40px;
+      padding: 3rem 3.2rem;
+      box-shadow: 0 18px 40px -12px rgba(140, 90, 55, 0.28),
+                  0 4px 12px rgba(255, 235, 215, 0.4);
+      transition: all 0.15s ease;
+      border: 1px solid rgba(255, 238, 218, 0.6);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 0.8rem; }
+      .card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 28px;
+      }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #4d2e1b;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #886b4f;
+      margin-bottom: 2rem;
+      border-left: 4px solid #e1b690;
+      padding-left: 1.1rem;
+      font-weight: 400;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: #2f241b;
+      margin-bottom: 2rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.6rem;
+      margin: 2.2rem 0 2.2rem 0;
+    }
+
+    .feature-item {
+      background: #fcf5ed;
+      border-radius: 20px;
+      padding: 0.9rem 1.2rem;
+      flex: 1 1 180px;
+      color: #4a3423;
+      font-weight: 450;
+      border: 1px solid #f0decb;
+      box-shadow: 0 3px 6px rgba(150, 100, 60, 0.06);
+    }
+
+    .feature-item strong {
+      color: #7b5536;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      font-size: 1.05rem;
+    }
+
+    .quote-block {
+      background: #f6ede3;
+      border-radius: 28px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 2.4rem 0;
+      font-style: normal;
+      color: #3f2d1e;
+      border-left: 6px solid #d8b48a;
+      font-size: 0.98rem;
+    }
+
+    .quote-block::before {
+      content: "💬 ";
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      color: #2b1f15;
+    }
+
+    .link-sentence {
+      background: #f7eee5;
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem 0.5rem 1.6rem;
+      display: inline-block;
+      margin: 0.4rem 0 0.8rem 0;
+      font-size: 1rem;
+    }
+
+    a {
+      color: #9b6d46;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #e1c0a4;
+      padding-bottom: 1px;
+      transition: border-color 0.2s, background 0.1s;
+      border-radius: 8px 8px 0 0;
+    }
+
+    a:hover {
+      border-bottom-color: #a97249;
+      background: #f3e3d3;
+    }
+
+    .faq-mini {
+      margin-top: 2.6rem;
+      border-top: 2px dashed #e4cfbb;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #4f3624;
+      padding: 0.3rem 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .faq-mini summary::before {
+      content: "▸";
+      color: #b98b66;
+      font-size: 1.2rem;
+    }
+
+    .faq-mini details[open] summary::before {
+      content: "▾";
+    }
+
+    .faq-mini details p {
+      margin: 0.4rem 0 1.2rem 1.2rem;
+      color: #4c3829;
+      font-size: 0.95rem;
+    }
+
+    .visit-note {
+      font-size: 0.95rem;
+      color: #7b624b;
+      margin-top: 1.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #eddac8;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    hr {
+      margin: 2rem 0 0.8rem 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #dabc9f, transparent);
+    }
+
+    .small-meta {
+      font-size: 0.85rem;
+      color: #927a62;
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 1.9rem; }
+      .feature-item { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>爱游戏</h1>
+    <div class="subhead">一个帮你快速摸清一款游戏值不值得花时间的站点</div>
+
+    <p class="intro-text">
+      每次想找新游戏，总会陷入信息漩涡：Steam 评论区两极分化，媒体评分又跟实际体验对不上。<br>
+      所以就有了 <a href="https://cnzh-i-game.com.cn">爱游戏</a> —— 没有冗长的评测，只有一份“玩家视角”的快速指南：它是什么类型的、手感如何、适合谁、坑在哪。
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>📋 一目了然</strong>
+        一句话类型 + 风格参考，十秒判断是否感兴趣
+      </div>
+      <div class="feature-item">
+        <strong>🎮 真实手感描述</strong>
+        操作门槛、节奏快慢、单机还是联机，不藏着掖着
+      </div>
+      <div class="feature-item">
+        <strong>⚠️ 劝退点也写</strong>
+        不只会说好话，哪些人可能玩不下去也明明白白
+      </div>
+    </div>
+
+    <div class="quote-block">
+      最近在翻《戴森球计划》的页面，一句话总结：“如果你喜欢工厂流水线 + 星际物流，可以泡几十个小时；但如果讨厌反复拉传送带，慎入。”—— 这正是我想在“爱游戏”看到的内容。
+    </div>
+
+    <p>
+      很多游戏介绍网站要么太官方，要么太粉丝向，缺少那种“朋友跟你聊”的实在感。<br>
+      而在 <a href="https://cnzh-i-game.com.cn">爱游戏</a>，每篇介绍都像是有个人坐在对面，喝口茶跟你讲：“这游戏我试了，这里爽，那里有点磨人。” 没有云评测，每个结论都基于实际游玩体验。
+    </p>
+
+    <p>
+      目前站内覆盖了独立游戏、中型作品和一些被低估的老游戏。内容还在慢慢长，但每一条都是人工筛选和真实感受。
+    </p>
+
+    <div class="faq-mini">
+      <details>
+        <summary>适合什么样的人看？</summary>
+        <p>如果你平时没空看长评测，又不想踩雷，只想花两分钟判断一款游戏合不合胃口，那“爱游戏”就是为你准备的。也适合已经买了游戏但犹豫要不要退款的玩家。</p>
+      </details>
+      <details>
+        <summary>内容会更新吗？</summary>
+        <p>会。虽然频率不高，但每篇都经过重新审视，避免过时信息。你可以时不时回来逛逛，也许会发现之前忽略的好游戏。</p>
+      </details>
+    </div>
+
+    <div class="visit-note">
+      <span>👀 想了解某款游戏到底能不能玩？</span>
+      <a href="https://cnzh-i-game.com.cn" style="border-bottom-width: 3px;">爱游戏</a>
+      <span>· 翻翻列表，说不定有惊喜。</span>
+    </div>
+
+    <hr>
+    <div class="small-meta">— 做减法，讲真话 · 爱游戏 —</div>
+  </div>
+</body>
+</html>

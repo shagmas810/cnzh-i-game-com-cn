@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shagmas810.github.io/cnzh-i-game-com-cn/sitemap.xml
