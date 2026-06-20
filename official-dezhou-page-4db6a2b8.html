@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德州扑克游戏 · 指南与站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f6f0;
+      font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+      color: #2e2b28;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fdfcf9;
+      padding: 2.4rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* 杂志风格横幅 */
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 2px solid #e2d9ce;
+      padding-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: #3a322c;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1.05rem;
+      color: #7a6f66;
+      margin-top: 0.6rem;
+      font-style: italic;
+      border-left: 3px solid #cbb7a6;
+      padding-left: 1rem;
+    }
+
+    /* 背景卡片 */
+    .context-box {
+      background: #f3efe9;
+      padding: 1.6rem 1.8rem;
+      border-radius: 16px;
+      margin: 2rem 0 2.4rem 0;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .context-box p {
+      margin-bottom: 0.6rem;
+    }
+    .context-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .context-label {
+      display: inline-block;
+      background: #d9cdbf;
+      color: #2e2b28;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    /* 自然介绍段落 */
+    .article-section {
+      margin: 2.4rem 0;
+    }
+
+    .article-section h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #3f3730;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px dashed #dcd3c9;
+      padding-bottom: 0.2rem;
+    }
+
+    .article-section p {
+      margin: 0.9rem 0;
+    }
+
+    .pull-quote {
+      margin: 1.8rem 2rem;
+      padding: 0.8rem 1.6rem;
+      border-left: 4px solid #b8a797;
+      background: #f7f3ed;
+      font-style: italic;
+      color: #4d443d;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .pull-quote::before {
+      content: "“";
+      font-size: 2.2rem;
+      line-height: 0.8;
+      color: #b8a797;
+      margin-right: 0.3rem;
+      vertical-align: -0.2rem;
+    }
+
+    .insight-list {
+      background: #f9f5ef;
+      padding: 1.2rem 1.8rem;
+      border-radius: 16px;
+      margin: 1.6rem 0;
+    }
+
+    .insight-list li {
+      margin: 0.5rem 0;
+      list-style-type: "— ";
+      padding-left: 0.5rem;
+    }
+
+    /* 提示框 */
+    .callout {
+      background: #ece6de;
+      padding: 1.2rem 1.6rem;
+      border-radius: 20px;
+      margin: 2.2rem 0 1.8rem 0;
+      border: 1px solid #dacfc3;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .callout strong {
+      color: #2b231e;
+    }
+
+    .callout a {
+      color: #6b4f3a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #cbb7a6;
+      font-weight: normal;
+      transition: color 0.15s;
+    }
+
+    .callout a:hover {
+      color: #3d2d22;
+      text-decoration-color: #3d2d22;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e1d7cd;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #7b6f65;
+    }
+
+    .site-footer a {
+      color: #6b4f3a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8a797;
+    }
+
+    .site-footer a:hover {
+      border-bottom: 1px solid #3d2d22;
+    }
+
+    .footnote {
+      font-style: italic;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page {
+        padding: 1.6rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .pull-quote {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+      }
+      .callout {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 杂志横幅 -->
+  <div class="hero">
+    <h1>德州扑克游戏</h1>
+    <div class="subhead">一个关于策略、判断与温和探索的纸牌世界</div>
+  </div>
+
+  <!-- 背景说明：站点身份与可信来源 -->
+  <div class="context-box">
+    <span class="context-label">站点背景</span>
+    <p><strong>official-dezhou.com</strong> 是一个专注于分享与介绍德州扑克游戏规则、常见策略以及线上体验的信息页面。很多朋友在接触德州扑克时，常常面对信息零散、来源不明的困扰——这个站点希望以平实的方式，为感兴趣的人提供一份相对系统的参考。</p>
+    <p>站内内容由长期关注棋牌文化的作者整理，不涉及任何形式的赌局引导或资金交易，仅作为知识性介绍。无论你是初次听说，还是希望重温基础，都可以在这里找到安静的阅读角落。</p>
+  </div>
+
+  <!-- 三段自然介绍 (杂志式文章块) -->
+  <div class="article-section">
+    <h2>为什么许多人持续关注这项游戏</h2>
+    <p>德州扑克之所以在全球范围内拥有稳定的爱好者，很大程度上源于它独特的张力：运气与决策并存，短期波动与长期技巧交织。比起单纯依靠牌运，它更考验参与者在信息不完整时的推理与取舍。</p>
+    <p>在桌上，你既需要观察对手的下注模式，也需要管理自己的底池和情绪。这种“不完全信息博弈”的属性，让每一手牌都可能成为一次微型心智练习。很多玩家发现，即便没有真实的筹码，仅仅在规则框架下思考，也能带来持久的乐趣。</p>
+
+    <div class="pull-quote">
+      最好的游戏体验，往往来自对规则的理解和对不确定性的接纳，而非对结果的执着。
+    </div>
+
+    <p>当然，德州扑克并不神秘。它的核心就是五张公共牌与两张底牌的组合比较。了解牌型大小、下注轮次以及位置概念，就已经掌握了九成的基础。剩下的，就是在反复实践中逐渐形成自己的判断风格。</p>
+  </div>
+
+  <div class="article-section">
+    <h2>从规则到场景：一个温和的视角</h2>
+    <p>如果你从未接触过，不妨将德州扑克想象成一场轮流讲述的故事：每个人手中有两张秘密卡片，桌面上会依次翻开五张公共牌，你需要用其中七张牌里最好的五张组合来参与比试。每一轮你都可以选择跟进、加注或弃牌——这种自由选择正是游戏魅力的来源。</p>
+    <p>在实际对局中，新手常常因为“想赢”而过度参与每一手牌，但其实聪明的玩家知道，多数时候等待合适的起手牌才是更稳健的策略。这个认知，往往需要一些亲自体验才能内化。</p>
+
+    <div class="insight-list">
+      <strong style="display:block; margin-bottom:0.2rem;">一些常被提及的观察：</strong>
+      <ul style="list-style:none; padding-left:0;">
+        <li>起手牌选择比大部分初学者想象的更重要；</li>
+        <li>位置（庄家附近）带来的信息优势常被低估；</li>
+        <li>弃牌不是失败，而是资源管理的一部分；</li>
+        <li>情绪稳定比计算能力更能影响长期表现。</li>
+      </ul>
+    </div>
+
+    <p>这些观点并非绝对真理，但它们是许多资深玩家反复分享的共识。了解这些，可以帮助你更快地建立自己的判断框架，而不必从零开始试错。</p>
+  </div>
+
+  <div class="article-section">
+    <h2>可靠的信息与自由的选择</h2>
+    <p>在互联网上搜索“德州扑克”时，你会遇到大量广告、论坛帖和视频教程。其中不乏有价值的内容，但也有些信息混杂了误导性的承诺或夸张的收益故事。而像 <a href="https://official-dezhou.com">德州扑克游戏</a> 这类介绍页面，更倾向于把规则和常见策略整理成易于阅读的形式，不渲染一夜成名的神话，也不鼓励盲目投入。</p>
+    <p>事实上，任何纸牌或竞技游戏，如果失去了“玩”的本心，就容易变味。保持好奇，适度参与，把德州扑克当作一种思维游戏来欣赏，或许能给你带来更持久的满足感。</p>
+  </div>
+
+  <!-- 一个提示框（类似FAQ摘要/提醒） -->
+  <div class="callout">
+    <strong>✎ 一个简单的提醒</strong><br>
+    如果你打算在线尝试，建议先花十分钟了解基础规则与庄位流程。很多免费练习平台都能提供无压力的模拟环境。无论你最终是否深入，<strong>清晰的信息和独立的判断</strong>，永远是最可靠的起点。
+  </div>
+
+  <!-- 页尾：访问提示 + 链接自然出现 -->
+  <div class="site-footer">
+    <span>关于 <a href="https://official-dezhou.com">德州扑克游戏</a> 的更多介绍与基础指引，欢迎浏览页面内容。</span>
+    <span class="footnote">保持平和 · 理性游戏</span>
+  </div>
+</div>
+</body>
+</html>
