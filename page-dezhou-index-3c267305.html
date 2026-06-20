@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一段关于德州扑克游戏的简要说明 · page-dezhou.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf9f7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1.25rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* 开场区域 — 留白本身就是叙事节奏 */
+        .opening {
+            margin: 2rem 0 2.8rem;
+            border-left: 3px solid #d0cbc3;
+            padding-left: 1.5rem;
+        }
+
+        .opening p {
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+            color: #3e3e3e;
+        }
+
+        .opening .small-meta {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.75rem;
+            color: #99948b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* 标题层级：静谧清晰 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 420;
+            margin-top: 0.5rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.01em;
+            color: #1f1e1c;
+            line-height: 1.25;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3a3733;
+            letter-spacing: 0.02em;
+            padding-bottom: 0.2rem;
+            border-bottom: 1px solid #e3dfd9;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            color: #3c3b39;
+        }
+
+        p a {
+            color: #5f5a52;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #c5bfb5;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        p a:hover {
+            color: #1f1e1c;
+            text-decoration-color: #1f1e1c;
+        }
+
+        /* 特点列表 — 温和克制，没有装饰图标 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0 0.8rem 1.2rem;
+            border-left: 2px solid #e2ddd5;
+            margin-bottom: 0.6rem;
+            font-size: 0.96rem;
+            color: #3c3a37;
+            transition: border-color 0.2s;
+        }
+
+        .feature-list li strong {
+            font-weight: 500;
+            color: #2d2a26;
+            margin-right: 0.25rem;
+        }
+
+        .feature-list li:hover {
+            border-left-color: #a39b90;
+        }
+
+        /* 场景提示区块 — 类似轻量卡片，但保持极简 */
+        .note-card {
+            background-color: #f5f2ed;
+            padding: 1.5rem 1.8rem;
+            margin: 2.2rem 0 1.8rem;
+            border-radius: 0;
+            border-left: 1px solid #d6d0c7;
+            border-right: 1px solid #d6d0c7;
+        }
+
+        .note-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            color: #3f3d39;
+        }
+
+        .note-card .note-label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #8f887d;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ 摘要 — 简化为提问风格 */
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+            padding: 0;
+        }
+
+        .faq-mini dt {
+            font-weight: 430;
+            color: #34312d;
+            margin-top: 1.4rem;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+            border-bottom: none;
+        }
+
+        .faq-mini dd {
+            margin-left: 0.4rem;
+            padding-left: 0.6rem;
+            border-left: 1px dotted #d1cbc2;
+            color: #4f4b45;
+            font-size: 0.93rem;
+            margin-bottom: 0.7rem;
+        }
+
+        /* 温和结尾 — 几乎像收信 */
+        .closing {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e6e1d9;
+            font-size: 0.9rem;
+            color: #6b655c;
+            line-height: 1.6;
+        }
+
+        .closing span {
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1.25rem 1rem 3rem;
+            }
+
+            .opening {
+                padding-left: 1rem;
+                margin-top: 1rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .note-card {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .feature-list li {
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 开场短句：像一个安静的邀请 -->
+        <div class="opening">
+            <p>
+                你大概已经注意到，很多规则书把翻牌、转牌、河牌讲得像是某种仪式。
+                <span class="small-meta">—— 但坐下来之后，第一步往往是调整呼吸。</span>
+            </p>
+        </div>
+
+        <h1>德州扑克游戏：一种简明指南，以及访问之前的一点提醒</h1>
+
+        <!-- 承接段落：自然引入访问链接，不强调“点击” -->
+        <p>
+            在各类纸牌竞技里，<a href="https://page-dezhou.com">德州扑克游戏</a>之所以让人反复琢磨，
+            常常不是因为复杂的算分，而是因为每一轮决策里都藏着信息与心理的平衡。
+            如果你刚刚接触，或者想重新梳理自己的思路，也许可以从了解基本位置、下注尺度与底池赔率开始——
+            这些概念就像地图上的等高线，并不直接告诉你宝藏在哪，但能让你看清地势。
+        </p>
+
+        <p>
+            很多人第一次上桌时，总觉得自己需要记住所有起手牌表格。
+            但实际体验中，更重要的往往是“什么时候该放弃”。所以这里有一条很实际的提醒：
+            在熟悉规则之前，不妨先慢下来，多观察几轮。我们后续在网站上整理了一些基础框架，
+            你可以随时参考，但真正的节奏感还是得靠手边的牌局来建立。
+        </p>
+
+        <!-- 特点列表：简练克制，不用花哨icon -->
+        <h2>几个常被提及的特点</h2>
+        <ul class="feature-list">
+            <li><strong>位置意识</strong> — 后面行动意味着你看到更多信息，但也要承受更多压力。</li>
+            <li><strong>底池控制</strong> — 不是每一手牌都要打到全下，有时小额持续下注就足够达到目的。</li>
+            <li><strong>范围思考</strong> — 把对手可能持有的牌看作一组组合，而不是盯着一张具体的牌。</li>
+            <li><strong>波动接纳</strong> — 短期结果里运气成分很大，长期来看决策质量才是分水岭。</li>
+        </ul>
+
+        <p>
+            这些特点听起来或许有些抽象，但在实际对局中，它们会反复出现。
+            如果你希望更系统地理解这些概念，可以花点时间在 <a href="https://page-dezhou.com">德州扑克游戏</a> 的页面上浏览一下，
+            那里用相对平实的语言梳理了从入门到进阶的一些思路。
+        </p>
+
+        <!-- 温和的场景提示卡片，更像一个善意提醒 -->
+        <div class="note-card">
+            <span class="note-label">一点访问前的提醒</span>
+            <p>
+                线上环境往往比线下更快速，自动发牌、自动计算底池，很容易让人连续按下“跟注”按钮。
+                建议你提前设定两个边界：一个是时间（比如每半小时站起来一次），
+                另一个是资金（只拿自己完全能承受的数量参与）。
+            </p>
+            <p>
+                无论你是想在休闲局里放松，还是认真打磨技术，记得保持一种“观察者”的心态——
+                赢的时候不急着加注，输的时候也不急着翻本。这听起来老套，但确实有效。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要：用提问/回答方式自然带出常见疑惑，控制字数 -->
+        <h2>FAQ 摘要</h2>
+        <dl class="faq-mini">
+            <dt>「我应该从哪种限注类型开始？」</dt>
+            <dd>大多数人推荐从固定限注（Limit）或小额无限注（NL2、NL5）开始，因为波动相对可控，容错空间也大一些。</dd>
+            <dt>「怎么知道自己的决策对不对？」</dt>
+            <dd>短期结果不能说明问题。可以记录几手关键牌局，回头分析自己的下注逻辑和范围预估，比单看输赢更有参考价值。</dd>
+            <dt>「需要背很多概率表吗？」</dt>
+            <dd>基本赔率（如听牌概率）大概记一下有帮助，但更核心的是理解“隐含赔率”和“弃牌率”这些动态概念。</dd>
+        </dl>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <span>写于一次平常的翻阅之后。</span>
+            <span>页面的内容始终是辅助，真正的学习发生在你放下手机、重新洗牌的那一刻。</span>
+        </div>
+    </div>
+</body>
+</html>
